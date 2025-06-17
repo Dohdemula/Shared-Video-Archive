@@ -1,0 +1,118 @@
+.members-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.members-dropdown-button {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.members-dropdown-button:hover {
+  color: #2563eb;
+}
+
+.members-dropdown-button svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.members-dropdown-button:hover svg {
+  transform: translateY(2px);
+}
+
+.members-dropdown-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  min-width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 8px;
+  margin-top: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.members-dropdown-content.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.member-item {
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.member-item:hover {
+  background-color: #f3f4f6;
+}
+
+.member-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-name {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.member-role {
+  font-size: 0.875rem;
+  color: #6b7280;
+  padding: 2px 8px;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.member-item:hover .member-role {
+  background-color: #e5e7eb;
+  color: #4b5563;
+}
+
+/* Add a subtle divider between items */
+.member-item:not(:last-child) {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+/* Add a header section */
+.members-dropdown-header {
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  color: #6b7280;
+  border-bottom: 1px solid #f3f4f6;
+  margin-bottom: 4px;
+}
+
+/* Add a subtle animation for the dropdown arrow */
+.members-dropdown.show .members-dropdown-button svg {
+  transform: rotate(180deg);
+} 
